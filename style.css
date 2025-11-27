@@ -686,6 +686,15 @@ button {
   font-size: 0.95rem;
 }
 
+.footer-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 1rem !important;
+  letter-spacing: 0.5px;
+}
+
 .footer-address {
   font-size: 0.9rem;
   opacity: 0.7;
