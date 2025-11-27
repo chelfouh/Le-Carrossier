@@ -1,4 +1,4 @@
-/* Reset simple */
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,10 +9,10 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #0f172a;
   background: #f3f4f6;
+  line-height: 1.5;
 }
 
-/* Topbar */
-
+/* TOPBAR */
 .topbar {
   position: sticky;
   top: 0;
@@ -27,26 +27,22 @@ body {
   padding: 0.6rem 1.25rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .logo {
   font-weight: 700;
-  color: #e5e7eb;
+  color: #f9fafb;
 }
 
+/* NAVIGATION */
 .nav {
   display: flex;
   gap: 1rem;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .nav a {
-  color: #9ca3af;
+  color: #cbd5e1;
   text-decoration: none;
   font-size: 0.95rem;
 }
@@ -56,13 +52,11 @@ body {
 }
 
 .nav-btn {
-  padding: 0.4rem 0.9rem;
+  padding: 0.45rem 1rem;
   border-radius: 999px;
   border: 1px solid #fbbf24;
   color: #fbbf24;
   text-decoration: none;
-  font-size: 0.9rem;
-  white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -70,8 +64,17 @@ body {
   color: #111827;
 }
 
-/* Hero */
+/* MOBILE TOPBAR FIX */
+@media (max-width: 640px) {
+  .topbar-inner {
+    padding: 0.45rem 0.9rem;
+  }
+  .nav {
+    display: none;
+  }
+}
 
+/* HERO */
 .hero {
   position: relative;
   height: 70vh;
@@ -85,16 +88,15 @@ body {
   background-image: url("hero-image.jpg");
   background-size: cover;
   background-position: center;
-  transform: scale(1.02);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.4), transparent),
-    radial-gradient(circle at bottom right, rgba(248, 250, 252, 0.2), transparent),
-    rgba(15, 23, 42, 0.8);
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.35), transparent),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.15), transparent),
+    rgba(15, 23, 42, 0.82);
 }
 
 .hero-content {
@@ -106,26 +108,27 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #e5e7eb;
+  color: #f1f5f9;
 }
 
 .hero-kicker {
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: #cbd5f5;
   margin-bottom: 0.75rem;
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 4vw, 3.1rem);
-  margin-bottom: 0.7rem;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
 .hero-text {
   max-width: 520px;
-  line-height: 1.6;
-  color: #cbd5e1;
+  font-size: 1rem;
+  color: #e2e8f0;
   margin-bottom: 1.5rem;
 }
 
@@ -139,50 +142,47 @@ body {
 .btn-primary,
 .btn-ghost {
   border-radius: 999px;
-  padding: 0.8rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   font-weight: 600;
   font-size: 0.95rem;
-  border: none;
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-primary {
   background: #fbbf24;
-  color: #111827;
-}
-
-.btn-ghost {
-  background: transparent;
-  color: #e5e7eb;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: #111;
 }
 
 .btn-primary:hover {
   background: #f59e0b;
 }
 
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
 .btn-ghost:hover {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-badge {
-  display: inline-flex;
-  flex-wrap: wrap;
+  display: flex;
   gap: 0.5rem;
-  font-size: 0.8rem;
-  color: #e5e7eb;
+  flex-wrap: wrap;
 }
 
 .hero-badge span {
-  padding: 0.25rem 0.6rem;
-  background: rgba(15, 23, 42, 0.7);
+  padding: 0.28rem 0.7rem;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
+  font-size: 0.82rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Sections */
-
+/* SECTIONS */
 .section {
   padding: 3rem 1.25rem;
 }
@@ -197,65 +197,84 @@ body {
 }
 
 .section-header {
-  max-width: 640px;
   margin-bottom: 1.8rem;
 }
 
 .section-header h2 {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
 }
 
-.section-header p {
-  color: #4b5563;
-  line-height: 1.6;
-}
-
-.grid-3 {
+/* ABOUT + PORTRAIT */
+.about-grid {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
+  align-items: center;
 }
 
-@media (min-width: 768px) {
-  .grid-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+/* Portrait à côté du texte même sur téléphone */
+@media (min-width: 360px) {
+  .about-grid {
+    grid-template-columns: 1.4fr 1fr;
   }
 }
 
-/* Cards */
-
-.card {
-  background: white;
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+.about-text p {
+  margin-bottom: 0.9rem;
+  color: #374151;
+  line-height: 1.7;
 }
 
-.card h3 {
-  margin-bottom: 0.4rem;
+.about-photo img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.25);
 }
 
-.card p {
+/* BANDEAU FRANCHISE */
+.highlight-banner {
+  margin-top: 1.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  color: #111;
+}
+
+.highlight-title {
+  font-weight: 700;
   font-size: 0.95rem;
-  color: #4b5563;
-  line-height: 1.6;
+  text-transform: uppercase;
 }
 
-/* Gallery */
-
-.gallery-grid {
-  margin-top: 1rem;
+.highlight-text {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
 }
 
+/* SERVICES WITH IMAGES */
+.service-card {
+  text-align: center;
+  padding-bottom: 1.4rem;
+}
+
+.service-img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* GALLERY */
 .gallery-card {
-  background: white;
+  background: #fff;
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
 }
 
 .gallery-card img {
-  display: block;
   width: 100%;
   height: 190px;
   object-fit: cover;
@@ -267,18 +286,7 @@ body {
   color: #4b5563;
 }
 
-.center {
-  text-align: center;
-}
-
-.small {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 0.75rem;
-}
-
-/* Contact */
-
+/* CONTACT */
 .contact-grid {
   display: grid;
   gap: 1.5rem;
@@ -286,124 +294,51 @@ body {
 
 @media (min-width: 768px) {
   .contact-grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-columns: 1.1fr 1fr;
   }
 }
 
-.contact-list {
-  list-style: none;
-  margin-top: 0.75rem;
-}
-
-.contact-list li {
-  margin-bottom: 0.3rem;
-}
-
 .contact-form {
-  background: white;
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+  background: #fff;
+  padding: 1.3rem;
+  border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.9rem;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
 }
 
 .contact-form label {
-  font-size: 0.9rem;
-  color: #374151;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.25rem;
+  font-size: 0.92rem;
 }
 
 .contact-form input,
-.contact-form textarea {
-  border-radius: 0.5rem;
-  border: 1px solid #d1d5db;
+.contact-form textarea,
+.contact-form input[type="file"] {
   padding: 0.6rem 0.7rem;
+  border-radius: 0.6rem;
+  border: 1px solid #d1d5db;
   font-size: 0.95rem;
+}
+
+.contact-form input[type="file"] {
+  background: #f1f5f9;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: none;
   border-color: #3b82f6;
+  outline: none;
   box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.25);
 }
 
-/* Footer */
-
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.85rem;
   color: #6b7280;
-}
-
-/* Bloc philosophie + portrait */
-
-.about-grid {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .about-grid {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  }
-}
-
-.about-text p {
-  margin-bottom: 0.9rem;
-  color: #4b5563;
-  line-height: 1.7;
-}
-
-.about-photo img {
-  width: 100%;
-  border-radius: 1rem;
-  object-fit: cover;
-  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.25);
-}
-
-/* Bandeau Franchise offerte */
-
-.highlight-banner {
-  margin-top: 1.2rem;
-  padding: 0.9rem 1rem;
-  border-radius: 0.9rem;
-  background: linear-gradient(135deg, #fbbf24, #f97316);
-  color: #111827;
-  display: inline-flex;
-  align-items: flex-start;
-  max-width: 420px;
-}
-
-.highlight-title {
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.highlight-text {
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-}
-
-/* Services avec images */
-
-.service-card {
-  text-align: center;
-  padding-bottom: 1.5rem;
-}
-
-.service-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 0.7rem;
-  margin-bottom: 0.7rem;
 }
