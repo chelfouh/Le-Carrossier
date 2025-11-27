@@ -35,7 +35,6 @@ body {
   color: #f9fafb;
 }
 
-/* NAVIGATION */
 .nav {
   display: flex;
   gap: 1rem;
@@ -160,12 +159,12 @@ body {
 
 .btn-ghost {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255,255,255,0.45);
   color: #fff;
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
 }
 
 .hero-badge {
@@ -182,7 +181,7 @@ body {
   border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* SECTIONS GÉNÉRALES */
+/* SECTIONS */
 .section {
   padding: 3rem 1.25rem;
 }
@@ -196,66 +195,42 @@ body {
   margin: 0 auto;
 }
 
+/* TITRES */
 .section-header {
   margin-bottom: 1.8rem;
 }
 
 .section-header h2 {
   font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
-.section-header p {
-  color: #4b5563;
-}
-
-/* GRILLE 3 COLONNES */
-.grid-3 {
-  display: grid;
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .grid-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-/* ABOUT + PORTRAIT */
+/* ABOUT - PORTRAIT EN BAS */
 .about-grid {
-  display: grid;
-  gap: 2rem;
-}
-
-/* Sur desktop : texte + portrait côte à côte */
-@media (min-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1.4fr 1fr;
-    align-items: center;
-  }
+  display: block; /* portrait en bas automatiquement */
 }
 
 .about-text p {
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
   color: #374151;
   line-height: 1.7;
 }
 
-/* Portrait mis en valeur (grand, centré sur mobile) */
+/* Portrait GRAND, centré, non écrasé */
 .about-photo img {
   width: 100%;
-  max-width: 420px;
+  max-width: 550px;
   border-radius: 1rem;
   object-fit: cover;
   display: block;
-  margin: 0 auto;
-  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.25);
+  margin: 1.8rem auto 0 auto;
+  box-shadow: 0 25px 40px rgba(15, 23, 42, 0.25);
 }
 
-/* BANDEAU FRANCHISE */
+/* PROMO - FRANCHISE */
 .highlight-banner {
-  margin-top: 1.2rem;
-  padding: 0.9rem 1rem;
+  margin-top: 1.3rem;
+  padding: 1rem 1.2rem;
   border-radius: 0.9rem;
   background: linear-gradient(135deg, #fbbf24, #f97316);
   color: #111;
@@ -263,29 +238,17 @@ body {
 
 .highlight-title {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
 .highlight-text {
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  margin-top: 0.3rem;
 }
 
-/* CARTES GÉNÉRALES */
-.card {
-  background: #fff;
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
-}
-
-.card h3 {
-  margin-bottom: 0.5rem;
-}
-
-/* SERVICES AVEC IMAGES */
-/* Pas de height fixe -> pas écrasé, on garde le ratio 4/3 */
+/* SERVICES */
+/* Aucune image écrasée – proportion auto */
 .service-card {
   text-align: center;
   padding-bottom: 1.4rem;
@@ -293,14 +256,17 @@ body {
 
 .service-img {
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 0.8rem;
   margin-bottom: 0.8rem;
-  display: block;
 }
 
-/* GALERIE – MÊME LOGIQUE: PAS DE PHOTO ÉCRASÉE */
+/* On impose un ratio 4/3 propre */
+.service-img {
+  aspect-ratio: 4 / 3;
+}
+
+/* GALLERY */
 .gallery-grid {
   margin-top: 1rem;
 }
@@ -312,11 +278,11 @@ body {
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
 }
 
+/* Pas de photo écrasée */
 .gallery-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  display: block;
 }
 
 .gallery-card figcaption {
@@ -337,15 +303,6 @@ body {
   }
 }
 
-.contact-list {
-  list-style: none;
-  margin-top: 0.75rem;
-}
-
-.contact-list li {
-  margin-bottom: 0.3rem;
-}
-
 .contact-form {
   background: #fff;
   padding: 1.3rem;
@@ -360,7 +317,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  font-size: 0.92rem;
 }
 
 .contact-form input,
@@ -376,22 +332,8 @@ body {
   background: #f1f5f9;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #3b82f6;
-  outline: none;
-  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.25);
-}
-
-/* TEXT UTILS */
 .center {
   text-align: center;
-}
-
-.small {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 0.75rem;
 }
 
 /* FOOTER */
