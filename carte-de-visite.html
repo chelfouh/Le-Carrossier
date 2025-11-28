@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Carte de visite – Le Carrossier | Nouar Benakkaf (V2)</title>
+  <title>Carte de visite – Le Carrossier | Nouar Benakkaf (V3)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   <style>
@@ -14,18 +14,17 @@
       box-sizing: border-box;
     }
     
-    /* Couleurs Clés */
     :root {
-      --color-primary: #3b82f6; /* Bleu Vif */
-      --color-secondary: #1e3a8a; /* Bleu Foncé */
-      --color-dark: #1f2937; /* Gris Foncé */
-      --color-light: #f9fafb; /* Blanc Cassé */
+      --color-primary: #3b82f6;
+      --color-secondary: #1e3a8a;
+      --color-dark: #1f2937;
+      --color-light: #f9fafb;
     }
 
     body {
       margin: 0;
       padding: 3rem;
-      background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%); /* Fond bleu plus éclatant */
+      background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
       font-family: 'Poppins', system-ui, -apple-system, sans-serif;
       display: flex;
       justify-content: center;
@@ -40,12 +39,10 @@
       align-items: center;
     }
 
-    /* FORMAT CARTE DE VISITE STANDARD - 85.6mm x 54mm */
     .card {
       width: 85.6mm;
       height: 54mm;
       border-radius: 8px;
-      /* Bordure bleue éclatante autour de la carte */
       border: 1px solid var(--color-primary); 
       box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.1);
       overflow: hidden;
@@ -59,18 +56,16 @@
       box-shadow: 0 30px 80px rgba(59, 130, 246, 0.4), 0 0 0 3px rgba(59, 130, 246, 0.2);
     }
 
-    /* ========== RECTO ========== */
     .card-front {
       background: linear-gradient(135deg, var(--color-light) 0%, #ffffff 100%);
       height: 100%;
       padding: 7mm;
       display: grid;
-      grid-template-columns: 1fr 1.1fr; /* Nouvelle structure pour mieux gérer l'espace */
+      grid-template-columns: 1.2fr 1fr;
       gap: 5mm;
       position: relative;
     }
     
-    /* Effet décoratif subtil */
     .card-front::before {
       content: '';
       position: absolute;
@@ -83,12 +78,10 @@
       pointer-events: none;
     }
 
-    /* Colonne Gauche: Logo et Contact */
     .front-left {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-bottom: 2mm; /* Espace pour aligner avec le bas de la colonne droite */
     }
 
     .logo-section {
@@ -103,7 +96,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--color-primary); /* Logo en bleu vif */
+      background: var(--color-primary);
       border-radius: 50%;
       box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
     }
@@ -135,14 +128,13 @@
       font-size: 2.6mm;
       color: var(--color-dark);
       line-height: 1.3;
-      white-space: nowrap; /* Empêche le retour à la ligne */
     }
 
     .contact-icon {
       width: 3.5mm;
       height: 3.5mm;
       flex-shrink: 0;
-      color: var(--color-primary); /* Icônes en bleu vif */
+      color: var(--color-primary);
     }
 
     .contact-icon svg {
@@ -151,25 +143,23 @@
       fill: var(--color-primary);
     }
 
-    /* Colonne Droite: Photo et Nom */
     .front-right {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      justify-content: space-between;
+      justify-content: center;
+      min-width: 0;
     }
 
-    /* Photo de portrait avec bordure bleue éclatante */
     .portrait {
-      width: 30mm;
-      height: 30mm;
+      width: 28mm;
+      height: 28mm;
       border-radius: 50%;
       overflow: hidden;
-      border: 3mm solid var(--color-primary); /* Bordure bleue autour de la photo */
+      border: 1.5mm solid var(--color-primary); /* Bordure plus fine */
       box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
       background: white;
-      margin-top: 2mm;
     }
 
     .portrait img {
@@ -187,11 +177,12 @@
     }
 
     .person-name {
-      font-size: 5.5mm;
+      font-size: 4.8mm;
       font-weight: 800;
       color: var(--color-dark);
       letter-spacing: -0.03em;
       line-height: 1.1;
+      white-space: nowrap;
     }
 
     .experience {
@@ -205,11 +196,11 @@
       color: #6b7280;
       margin-top: 0.5mm;
       font-weight: 500;
+      white-space: nowrap;
     }
 
-    /* ========== VERSO ========== */
     .card-back {
-      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-dark) 100%); /* Fond bleu foncé/gris */
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-dark) 100%);
       color: var(--color-light);
       height: 100%;
       padding: 8mm;
@@ -223,7 +214,6 @@
       overflow: hidden;
     }
     
-    /* Motif de fond subtil */
     .card-back::before {
       content: '';
       position: absolute;
@@ -233,7 +223,6 @@
       pointer-events: none;
     }
     
-    /* Cercle décoratif bleu */
     .card-back::after {
       content: '';
       position: absolute;
@@ -282,7 +271,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid var(--color-primary); /* Bordure QR code en bleu */
+      border: 2px solid var(--color-primary);
     }
 
     .qr-container img {
@@ -300,7 +289,6 @@
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     }
 
-    /* Optimisation pour l'impression */
     @media print {
       body {
         background: white;
@@ -327,24 +315,20 @@
 <body>
   <div class="cards-wrapper">
 
-    <!-- ========== RECTO ========== -->
     <div class="card card-front">
       <div class="front-left">
         <div class="logo-section">
           <div class="logo-icon">
-            <!-- Icône Service/Information (remplace la clé à molette) -->
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z"/>
+              <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 10l1.5-4.5h11L19 10H5z"/>
             </svg>
           </div>
           <div class="brand-name">LE CARROSSIER</div>
         </div>
         
         <div class="contact-info">
-          <!-- Numéro de téléphone sur une seule ligne -->
           <div class="contact-item">
             <div class="contact-icon">
-              <!-- Icône Téléphone -->
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
               </svg>
@@ -352,10 +336,8 @@
             <span>+33 6 18 10 44 80</span>
           </div>
           
-          <!-- Adresse sur une seule ligne -->
           <div class="contact-item">
             <div class="contact-icon">
-              <!-- Icône Localisation -->
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
@@ -377,7 +359,6 @@
       </div>
     </div>
 
-    <!-- ========== VERSO ========== -->
     <div class="card card-back">
       <div class="back-content">
         <div class="back-title">
