@@ -1,341 +1,290 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap' );
+<body>
+  <!-- TOPBAR / NAVIGATION -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo">
+        Nouar Benakkaf
+      </div>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-:root {
-  --color-primary: #3b82f6;
-  --color-secondary: #1e3a8a;
-  --color-dark: #1f2937;
-  --color-light: #f9fafb;
-}
+      <nav class="nav" id="mainNav">
+        <a href="#hero">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Réalisations</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-btn">Demander un devis</a>
+      </nav>
+    </div>
+  </header>
 
-body {
-  margin: 0;
-  padding: 3rem;
-  background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
-  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
 
-.cards-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  align-items: center;
-}
+    <div class="hero-content">
+      <p class="hero-kicker">Carrosserie & Expertise</p>
+      <h1>Votre véhicule entre les mains d’un expert carrossier</h1>
 
-.card {
-  width: 85.6mm;
-  height: 54mm;
-  border-radius: 8px;
-  border: 1px solid var(--color-primary); 
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.1);
-  overflow: hidden;
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: white;
-}
+      <p class="hero-text">
+        Redressage, peinture, rénovation esthétique : profitez du savoir-faire
+        artisanal de Nouar Benakkaf, plus de 15 ans d’expérience au service de
+        votre véhicule.
+      </p>
 
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 80px rgba(59, 130, 246, 0.4), 0 0 0 3px rgba(59, 130, 246, 0.2);
-}
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Demander un devis</a>
+        <a href="#services" class="btn-ghost">Découvrir les services</a>
+      </div>
 
-.card-front {
-  background: linear-gradient(135deg, var(--color-light) 0%, #ffffff 100%);
-  height: 100%;
-  padding: 7mm;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 5mm;
-  position: relative;
-}
+      <div class="hero-badge">
+        <span>+15 ans d’expérience</span>
+        <span>Travail minutieux & finitions soignées</span>
+        <span>Basé à 19 avenue de Fuveau, 13013 Marseille</span>
+      </div>
+    </div>
+  </section>
 
-.card-front::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 35mm;
-  height: 35mm;
-  background: radial-gradient(circle at top right, var(--color-primary) 0%, transparent 70%);
-  opacity: 0.1;
-  pointer-events: none;
-}
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Un artisan carrossier au service de votre véhicule</h2>
+        <p>
+          Un accompagnement personnalisé, des finitions impeccables et une vraie
+          passion pour le travail bien fait.
+        </p>
+      </div>
 
-.front-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Nouar Benakkaf est carrossier depuis plus de quinze ans. Son objectif :
+            redonner à chaque véhicule son éclat d’origine, tout en respectant les
+            délais et le budget de ses clients.
+          </p>
+          <p>
+            Que ce soit pour un choc important, une rayure profonde, un pare-chocs
+            à refaire ou une peinture complète, chaque intervention est réalisée
+            avec précision, rigueur et des matériaux de qualité.
+          </p>
+          <p>
+            Particulier ou professionnel, vous êtes accompagné de A à Z :
+            diagnostic, conseils, devis clair, puis réalisation des travaux avec un
+            suivi transparent.
+          </p>
 
-.logo-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5mm;
-  align-items: center;
-}
+          <div class="highlight-banner">
+            <span class="highlight-title">
+              L’excellence artisanale au service de votre véhicule
+            </span>
+            <p class="highlight-text">
+              Confiez votre carrosserie à un expert qui considère chaque véhicule
+              comme une vitrine de son savoir-faire.
+            </p>
+          </div>
+        </div>
 
-.logo-icon {
-  width: 11mm;
-  height: 11mm;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 2mm auto;
-}
+        <div class="about-photo">
+          <!-- Remplace la source par ta vraie photo -->
+          <img src="images/nouar-benakkaf.jpg" alt="Nouar Benakkaf, expert carrossier">
+        </div>
+      </div>
+    </div>
+  </section>
 
-.logo-icon svg {
-  width: 100%;
-  height: 100%;
-  fill: var(--color-dark);
-}
+  <!-- SERVICES -->
+  <section id="services" class="section section-grey">
+    <div class="container">
+      <div class="section-header">
+        <h2>Services de carrosserie</h2>
+        <p>
+          Des prestations complètes pour réparer, protéger et sublimer votre véhicule.
+        </p>
+      </div>
 
-.brand-name {
-  font-size: 3.2mm;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--color-dark);
-  text-transform: uppercase;
-}
+      <div class="grid-3">
+        <!-- Service 1 -->
+        <article class="card service-card">
+          <div class="service-img-wrapper">
+            <img src="images/service-carrosserie.jpg" alt="Réparation de carrosserie" class="service-img">
+          </div>
+          <div class="service-content">
+            <h3>Réparation de carrosserie</h3>
+            <p>
+              Redressage, débosselage, remplacement d’éléments abîmés : remise en
+              état complète après choc ou accident, dans le respect des normes.
+            </p>
+          </div>
+        </article>
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5mm;
-}
+        <!-- Service 2 -->
+        <article class="card service-card">
+          <div class="service-img-wrapper">
+            <img src="images/service-peinture.jpg" alt="Peinture automobile" class="service-img">
+          </div>
+          <div class="service-content">
+            <h3>Peinture & retouches</h3>
+            <p>
+              Peinture complète ou partielle, raccords de teinte, vernis haute
+              résistance : un rendu homogène et durable pour votre carrosserie.
+            </p>
+          </div>
+        </article>
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 2mm;
-  font-size: 2.6mm;
-  color: var(--color-dark);
-  line-height: 1.3;
-}
+        <!-- Service 3 -->
+        <article class="card service-card">
+          <div class="service-img-wrapper">
+            <img src="images/service-detailing.jpg" alt="Rénovation esthétique" class="service-img">
+          </div>
+          <div class="service-content">
+            <h3>Rénovation esthétique</h3>
+            <p>
+              Lustrage, polissage, correction de micro-rayures et protection :
+              votre véhicule retrouve brillance et profondeur de couleur.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-.contact-icon {
-  width: 3.5mm;
-  height: 3.5mm;
-  flex-shrink: 0;
-  color: var(--color-primary);
-}
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Avant / Après</h2>
+        <p>
+          Quelques exemples de réalisations pour illustrer le niveau de finition proposé.
+        </p>
+      </div>
 
-.contact-icon svg {
-  width: 100%;
-  height: 100%;
-  fill: var(--color-primary);
-}
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="images/avant-apres-1.jpg" alt="Réparation d’aile et peinture complète">
+          <figcaption>Réparation d’aile avant et peinture complète.</figcaption>
+        </figure>
 
-.front-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  min-width: 0;
-  flex-shrink: 0;
-}
+        <figure class="gallery-card">
+          <img src="images/avant-apres-2.jpg" alt="Pare-chocs et redressage">
+          <figcaption>Redressage pare-chocs et remise à neuf.</figcaption>
+        </figure>
 
-.portrait {
-  width: 28mm;
-  height: 28mm;
-  min-width: 28mm;
-  min-height: 28mm;
-  max-width: 28mm;
-  max-height: 28mm;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 1.5mm solid var(--color-primary);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
-  background: white;
-  flex-shrink: 0;
-  position: relative;
-}
+        <figure class="gallery-card">
+          <img src="images/avant-apres-3.jpg" alt="Rénovation complète">
+          <figcaption>Rénovation complète et lustrage finition showroom.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-.portrait img {
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+  <!-- CONTACT -->
+  <section id="contact" class="section section-grey">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Infos -->
+        <div class="contact-info">
+          <h2>Contact & atelier</h2>
+          <p>
+            Pour un devis, une question ou un projet spécifique, vous pouvez
+            contacter directement l’atelier par téléphone, WhatsApp ou via le formulaire.
+          </p>
 
-.name-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5mm;
-  margin-top: 2mm;
-  flex-shrink: 0;
-}
+          <ul class="contact-list">
+            <li>
+              <span class="icon">📍</span>
+              <div>
+                <strong>Adresse de l’atelier</strong>
+                <span>19 avenue de Fuveau, 13013 Marseille</span>
+              </div>
+            </li>
+            <li>
+              <span class="icon">📞</span>
+              <div>
+                <strong>Téléphone / WhatsApp</strong>
+                <a href="tel:+33618104480">+33 6 18 10 44 80</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon">📧</span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:contact@carrosserie-nouar.fr">contact@carrosserie-nouar.fr</a>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-.person-name {
-  font-size: 4.8mm;
-  font-weight: 800;
-  color: var(--color-dark);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  white-space: nowrap;
-}
+        <!-- Formulaire -->
+        <div class="contact-form">
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="name">Nom <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required>
+            </div>
 
-.experience {
-  font-size: 2.8mm;
-  font-weight: 600;
-  color: var(--color-secondary);
-}
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
 
-.address-full {
-  font-size: 2.4mm;
-  color: #6b7280;
-  margin-top: 0.5mm;
-  font-weight: 500;
-  white-space: nowrap;
-}
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone">
+              <p class="form-help">
+                Facultatif, mais recommandé pour un retour plus rapide.
+              </p>
+            </div>
 
-.card-back {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-dark) 100%);
-  color: var(--color-light);
-  height: 100%;
-  padding: 8mm;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 5mm;
-  position: relative;
-  overflow: hidden;
-}
+            <div class="form-group">
+              <label for="message">Votre message <span class="required">*</span></label>
+              <textarea id="message" name="message" required></textarea>
+              <p class="form-help">
+                Indiquez le modèle du véhicule, le type de dommage et si possible une idée de délai.
+              </p>
+            </div>
 
-.card-back::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px);
-  pointer-events: none;
-}
+            <button type="submit" class="btn-primary btn-full">
+              Envoyer ma demande
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.card-back::after {
-  content: '';
-  position: absolute;
-  top: -15mm;
-  right: -15mm;
-  width: 35mm;
-  height: 35mm;
-  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
-  opacity: 0.2;
-  pointer-events: none;
-}
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-name">Nouar Benakkaf – Expert Carrosserie</p>
+    <p class="footer-address">19 avenue de Fuveau, 13013 Marseille – France</p>
+    <p>© <span id="year"></span> Tous droits réservés.</p>
+  </footer>
 
-.back-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5mm;
-}
+  <!-- PETIT SCRIPT POUR LE MENU MOBILE + ANNÉE -->
+  <script>
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    const nav = document.getElementById('mainNav');
+    const topbar = document.querySelector('.topbar');
 
-.back-title {
-  font-size: 3.8mm;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-light);
-  line-height: 1.4;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
 
-.qr-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5mm;
-}
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        topbar.classList.add('scrolled');
+      } else {
+        topbar.classList.remove('scrolled');
+      }
+    });
 
-.qr-container {
-  width: 22mm;
-  height: 22mm;
-  background: white;
-  border-radius: 6px;
-  padding: 1.5mm;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--color-primary);
-}
-
-.qr-container img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.qr-label {
-  font-size: 2.5mm;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #9ca3af;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-}
-
-@media print {
-  body {
-    background: white;
-    padding: 0;
-  }
-  
-  .cards-wrapper {
-    gap: 5mm;
-  }
-  
-  .card {
-    box-shadow: none;
-    page-break-inside: avoid;
-    border: 1px solid #ccc;
-  }
-  
-  .card:hover {
-    transform: none !important;
-    box-shadow: none !important;
-  }
-  
-  .card-back {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    color-adjust: exact !important;
-  }
-  
-  .portrait {
-    transform: none !important;
-    transition: none !important;
-    width: 28mm !important;
-    height: 28mm !important;
-  }
-  
-  .portrait img {
-    transform: none !important;
-    transition: none !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-  
-  .front-right {
-    transform: none !important;
-  }
-}
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
