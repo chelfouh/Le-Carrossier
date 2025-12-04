@@ -88,22 +88,22 @@
       display: flex;
       flex-direction: column;
       gap: 1.5mm;
-      align-items: center; /* Centrer le logo et le texte */
+      align-items: center;
     }
 
     .logo-icon {
-      width: 11mm; /* Taille de l'icône ajustée */
+      width: 11mm;
       height: 11mm;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 2mm auto; /* Centrage et espacement */
+      margin: 0 auto 2mm auto;
     }
 
     .logo-icon svg {
       width: 100%;
       height: 100%;
-      fill: var(--color-dark); /* Couleur gris foncé */
+      fill: var(--color-dark);
     }
 
     .brand-name {
@@ -159,12 +159,14 @@
       border: 1.5mm solid var(--color-primary);
       box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
       background: white;
+      flex-shrink: 0;
     }
 
     .portrait img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
       display: block;
     }
 
@@ -199,7 +201,13 @@
     }
 
     .card-back {
-      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-dark) 100%);
+      background: repeating-linear-gradient(
+        45deg,
+        #000000,
+        #000000 10px,
+        #ffffff 10px,
+        #ffffff 20px
+      );
       color: var(--color-light);
       height: 100%;
       padding: 8mm;
@@ -211,27 +219,6 @@
       gap: 5mm;
       position: relative;
       overflow: hidden;
-    }
-    
-    .card-back::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px);
-      pointer-events: none;
-    }
-    
-    .card-back::after {
-      content: '';
-      position: absolute;
-      top: -15mm;
-      right: -15mm;
-      width: 35mm;
-      height: 35mm;
-      background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
-      opacity: 0.2;
-      pointer-events: none;
     }
 
     .back-content {
@@ -248,9 +235,9 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--color-light);
+      color: #000000;
       line-height: 1.4;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
     }
 
     .qr-section {
@@ -270,7 +257,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid var(--color-primary);
+      border: 2px solid #000000;
     }
 
     .qr-container img {
@@ -284,8 +271,8 @@
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #9ca3af;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      color: #000000;
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
     }
 
     @media print {
@@ -306,6 +293,12 @@
       
       .card:hover {
         transform: none;
+      }
+      
+      .card-back {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color-adjust: exact;
       }
     }
   </style>
@@ -362,7 +355,6 @@
       <div class="back-content">
         <div class="back-title">
           L'EXCELLENCE ARTISANALE  
-
           AU SERVICE DE VOTRE VÉHICULE
         </div>
 
